@@ -5,7 +5,7 @@ Sebuah Pipeline yang dibuat berdasarkan data kualitas udara Jakarta dari Open-Me
 ## Alur
 ```mermaid
 flowchart LR
-    A[Open-Meteo API] --> B[Extract<br/>extract.py]
+    A[Open-Meteo API] --> B[Extract<br/>extrac.py]
     B --> C[Transform<br/>transform.py]
     C --> D[Load<br/>load.py]
     D --> F[(fact_air_quality)]
