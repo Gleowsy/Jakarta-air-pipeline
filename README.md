@@ -3,7 +3,14 @@
 Sebuah Pipeline yang dibuat berdasarkan data kualitas udara Jakarta dari Open-Metio API, dicleaning lalu di simpan ke database MySQL dengan schema fact/Dimension.
 
 ## Alur
-Open-Meteo API → Extract (Python) → Transform (Pandas) → Load (MySQL)
+```mermaid
+flowchart LR
+    A[Open-Meteo API] --> B[Extract<br/>extract.py]
+    B --> C[Transform<br/>transform.py]
+    C --> D[Load<br/>load.py]
+    D --> F[(fact_air_quality)]
+    E[(dim_location)] -->|lookup location_id| D
+```
 
 ## Tech Stack
 Python, Pandas, SQLAlchemy, MySQL (XAMPP), Open-Meteo API
